@@ -1,0 +1,52 @@
+<!doctype>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+	integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+	crossorigin="anonymous"></script>
+<script type="text/javascript" th:src="@{/js/ajax.js}">
+	
+</script>
+<!-- <style type="text/css" >
+@import url("@{/css/rest.css}");
+</style> -->
+<link rel="stylesheet" type="text/css" media="all"
+	th:href="@{/css/rest.css}" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Restful Employee</title>
+
+</head>
+
+<body>
+	<h1>Add Employee</h1>
+
+	<form id="employeeForm" method="post" th:object="${employee}">
+		<table cellpadding="0" cellspacing="0" border="1" class="GridOne">
+			<tr>
+				<td>First Name</td>
+				<td><input type="text" name="firstName" id="firstName"
+					th:field="*{firstName}"></td>
+			</tr>
+			<tr>
+				<td>Last Name</td>
+				<td><input type="text" name="lastName" id="lastName"
+					th:field="*{lastName}"></td>
+			</tr>
+			<tr>
+				<td>Email</td>
+				<td><input type="text" name="email" id="email"
+					th:field="*{email}"></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center"><input type="button"
+					value="Ajax Submit" onclick="makeAjaxCall();"></td>
+			</tr>
+		</table>
+	</form>
+	<!-- Success - or Validation errors -->
+	<div id="errors" style="display: none"></div>
+
+	<div id="formInput" style="display: none"></div>
+</body>
+</html>
